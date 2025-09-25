@@ -9,7 +9,8 @@
     position: fixed;   /* makes it stick */
     top: 0;            /* sticks it to the top */
     left: 0;           /* align with left */
-    width: 100%;       /* full width */
+    width: 100%; 
+    height: 61px;      /* full width */
     z-index: 1000;     /* keeps it above other content */
     background: #fff;  /* add background so text doesn’t overlap */
     box-sizing: border-box;
@@ -284,98 +285,41 @@ a{
   top:90px;
 }
 
-.slider-container-fifth {
-  position: relative;
+.slider-scroll {
+  overflow: hidden;
   width: 100%;
-  height: 100%;
+  background: #fff;
+  padding: 20px 0;
 }
 
-.slides-fifth {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.slide-fifth {
-  position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+.slider-track {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: scale(1.02);
-  transition: opacity 600ms ease, transform 600ms ease;
-  pointer-events: none;
+  width: calc(450px * 8); /* adjust based on slides */
+  animation: scroll 30s linear infinite;
 }
 
-/* image style */
-.slide-fifth img {
+.slider-item {
+  position: relative;
+  width: 450px;
+  flex-shrink: 0;
+  margin: 0 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.slider-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
 }
 
-/* active slide */
-.slide-fifth.active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 2;
-  pointer-events: auto;
+/* animation */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-450px * 4)); } 
+  /* scroll half the track width so it loops smoothly */
 }
-
-/* nav buttons */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  z-index: 5;
-}
-.slider-btn.prev { left: 12px; }
-.slider-btn.next { right: 12px; }
-.slider-btn:focus { outline: 2px solid #619E8E; }
-
-/* dots */
-.dots {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 12px;
-  display:flex;
-  gap: 8px;
-  z-index: 6;
-}
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.6);
-  border: none;
-  cursor: pointer;
-}
-.dot.active {
-  background: rgba(255,255,255,0.98);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-
-/* responsive */
-@media (max-width: 900px) {
-  #fifth-div .pictures { height: 320px; }
-}
-@media (max-width: 600px) {
-  #fifth-div .pictures { height: 220px; }
-  .slider-btn { padding: 8px 10px; font-size: 16px; }
-}
-
 
 
 
@@ -415,6 +359,93 @@ a{
 }
 
 
+#contact-details{
+  /* margin:80px 0px 80px 0px; */
+  padding:96px;
+}
+
+#contact-details a{
+  color:#02386E;
+}
+#contact-details p{
+  color:#02386E;
+}
+
 #footer-content{
   color:#02386E;
 }
+
+
+
+
+
+/* contact page */
+#contact-first{
+  display:inline-block;
+  position:relative;
+  height:95vh;
+  width:100vw;
+  /* background-color:blue; */
+  background-image:url("https://yomira.com/wp-content/uploads/2022/10/Jeff-Brown-21273-scaled-1600x1080-c-default.jpg");
+  background-size:cover;
+}
+
+#contact-first #content-first{
+  display:inline-block;
+  position:relative;
+  z-index:1000;
+  top:350px;
+  left:580px;
+  font-size:60px;
+  color:white;
+}
+
+#contact-first #links-content-first{
+  background-color:#619E8E;
+  border-radius:40px;
+  height:20px;
+  width:542px;
+  padding:16px;
+  position:relative;
+  top:340px;
+  left:480px;
+}
+
+#contact-details{
+  position:relative;
+  top:-50px;
+}
+#contact-contact-details a{
+  color:black;
+}
+
+#card-image{
+  background-image:url("https://yomira.com/wp-content/uploads/2020/11/iStock-1152263000.jpg");
+  background-size:cover;
+  border-radius: 20px 20px 0px 0px;
+}
+
+
+/* privacy-policy page */
+#policy-paragraph {
+  position:relative; 
+  top:60px; right:-500px; 
+  text-align:left;
+  margin-bottom:140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
