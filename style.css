@@ -166,7 +166,7 @@ a{
 
 }
 
-#fourth-div .pictures {
+#fourth-div .slider-scroll {
   position: relative;
   max-width: 1000px;
   height: 500px;
@@ -465,6 +465,59 @@ a{
 #special-services{
   margin-top:80px;
 }
+/* General layout for service sections */
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 100px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.service-section img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.service-section .service-content {
+  max-width: 600px;
+}
+
+.service-section h2 {
+  font-size: 40px;
+  color: #02386E;
+  margin-bottom: 20px;
+}
+
+.service-section p {
+  font-size: 20px;
+  color: #02386E;
+  line-height: 1.6;
+}
+
+/* Reverse layout for alternating sections */
+.service-section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Optional: make it responsive */
+@media (max-width: 900px) {
+  .service-section {
+    flex-direction: column;
+  }
+  .service-section.reverse {
+    flex-direction: column;
+  }
+  .service-section img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 /* About page */
 
